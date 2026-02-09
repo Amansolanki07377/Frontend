@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height: 500px;
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img src="img/img1.jpg" height="100%" class="img" width="100%" alt="">
+        <img src="img/img2.jpg" height="100%" class="img" width="100%" alt="">
+        <img src="img/img3.jpg" height="100%" class="img" width="100%" alt="">
+        <img src="img/img4.jpg" height="100%" class="img" width="100%" alt="">
+    </div>
+     <button id="btu">pve</button>
+     <button id="btu1">nxt</button>
+
+    <img src="" alt="">
+    <script>
+
+        let img_tag = document.getElementsByClassName("img")
+        console.log(img_tag)
+
+        let index = 0
+
+        function slider(){
+            // all img hidden
+            for(let i=0;i<img_tag.length;i++){
+                img_tag[i].style.display="none"
+            }
+            // one img show
+            img_tag[index].style.display = "block"
+            index++;
+
+            // back first
+            if(index == 4){
+                index = 0
+            }
+
+            setTimeout(slider,1000)
+        }
+         
+        // slider()
+
+        let btu = document.getElementById("btu")
+        let btu1 = document.getElementById("btu1")
+
+        btu.addEventListener("click",function(){
+            index--;
+            if(index < 0){
+                index = img_tag.length - 1
+            }
+            for(let i=0;i<img_tag.length;i++){
+                img_tag[i].style.display="none"
+            }
+            img_tag[index].style.display = "block"
+        })
+
+        btu1.addEventListener("click",function(){
+            index++;
+            if(index == 4){
+                index = 0
+            }
+            for(let i=0;i<img_tag.length;i++){
+                img_tag[i].style.display="none"
+            }
+            img_tag[index].style.display = "block"
+        })
+
+    </script>
+</body>
+</html>

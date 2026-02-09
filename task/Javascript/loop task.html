@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      for (let i = 5; i >= 1; i--) {
+        for (let j = 1; j <= i; j++) {
+          document.write("*");
+        }
+        document.writeln("<br>");
+      }
+
+    //   nessted loops to create a right-aligned triangle
+
+for (let i = 1; i <= 5; i++) {
+    for (let j = 1; j <= 5 - i; j++) {
+        document.write("&nbsp;&nbsp;");
+    }
+    for (let k = 1; k <= i; k++) {
+        document.write("*");
+    }
+    document.write("<br>");
+}
+ 
+// nessted loops to create an inverted right-aligned triangle
+
+for (let i = 5; i >= 1; i--) {
+    for (let j = 1; j <= 5 - i; j++) {
+        document.write("&nbsp;&nbsp;");
+    }
+    for (let k = 1; k <= i; k++) {
+        document.write("*");
+    }
+    document.write("<br>");
+}
+
+
+
+// loop to print numbers from 1 to 10 except from 3 to 7
+
+          for(let i=1; i<=10; i++){
+           
+
+
+        // if(!(i>=3 && i<=7)){
+        //         console.log(i)
+
+
+                 if(i<=2 || i>7){
+                console.log(i)
+            } 
+          }
+ 
+          function cal()
+        {
+            
+        }
+
+</script>
+ 
+      
+    </script>
+  </body>
+</html>

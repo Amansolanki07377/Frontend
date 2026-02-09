@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+    // single Inheritance : // multilevel Inheritance :
+        class A {
+            data1(){
+                console.log("data member 1 from class A");
+            }
+        }
+
+    class b extends A{
+        data2(){
+            console.log("data member 2 from class B");
+        }
+    }
+
+    class c extends b{
+        data3(){
+            console.log("data member 3 from class C");
+        }
+    }
+    const obj = new c();
+    obj.data1();
+    obj.data2();
+    obj.data3();
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <script>
+
+        fetch("https://696dcb36d7bacd2dd7148de4.mockapi.io/Userid",{
+            method:"GET",
+        }) 
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{    
+            console.log(data)
+        })
+
+       
+
+        const data1 = async()=>{
+            const res = await axios.get("https://696dcb36d7bacd2dd7148de4.mockapi.io/Userid") 
+            console.log(res.data)
+       
+        } 
+        data1()
+
+
+        
+
+    </script>
+    
+</body>
+</html>

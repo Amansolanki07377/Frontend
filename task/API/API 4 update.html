@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+</head>
+<body>
+    <script>
+
+        const getdata=async()=>{
+            const res = await axios.get("https://660d95e36ddfa2943b34c530.mockapi.io/users")
+            console.log(res.data)
+
+            for(let users of res.data){
+                console.log(users)
+            }
+        }
+        // getdata()
+
+        // post new data
+        let person = {
+            name : "karan patel",
+            email : "karan@gmail.com",
+            city :"surat"
+        }
+
+        const newUser = async()=>{
+            const res = await axios.post("https://660d95e36ddfa2943b34c530.mockapi.io/users",person)
+            console.log(res.data)
+        }
+        // newUser()
+
+        // delete user 
+
+        const deleteuser = async ()=>{
+            try {
+                const res = await axios.delete(`https://660d95e36ddfa2943b34c530.mockapi.io/users/11`)
+                console.log(res.data)
+            } catch (error) {
+                console.log("Api data not Found")
+            }
+        }
+
+        // deleteuser()
+
+        let perosn1 = {
+            id:"2",
+            name:"arayan",
+            phone : "386757845",
+            city:"ahemdabad"
+        }
+
+        const updateuser = async()=>{
+            const res = await axios.put(`https://660d95e36ddfa2943b34c530.mockapi.io/users/${perosn1.id}`,perosn1)
+            console.log(res.data)
+        }
+        updateuser()
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+
+    // hybrid Inheritance :
+
+        class A{
+            data1(){
+                console.log("data member 1 from class A");
+            }
+        }
+    class B extends A{
+        data2(){
+            console.log("data member 2 from class B");
+        }
+    }
+    class C extends B{
+        data3(){ 
+            console.log("data member 3 from class C");
+        }
+    }
+    class D extends C{
+        data4(){
+            console.log("data member 4 from class D");
+        }
+    }
+    class E extends C{
+        data5(){
+            console.log("data member 5 from class E");
+        }
+    }
+
+    const obj = new D();
+    const obj2 = new E();
+    obj.data1();
+    obj.data2();
+    obj.data3();
+    obj.data4();
+    obj2.data5();
+    obj2.data1();
+
+    </script>
+</body>
+</html>
