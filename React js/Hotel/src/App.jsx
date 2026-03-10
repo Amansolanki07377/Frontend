@@ -1,0 +1,60 @@
+import React from 'react'
+import Home from './Website/Pages/Home'
+import About from './Website/Pages/About'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Services from './Website/Pages/Services'
+import Room from './Website/Pages/Room'
+import Booking from './Website/Pages/Booking'
+import Team from './Website/Pages/Team'
+import Testimonial from './Website/Pages/Testimonial'
+import Contect from './Website/Pages/Contect'
+import Notfound from './Website/Pages/Notfound'
+import Dashbord from './Admin/Apages/Dashbord'
+import RoomManage from './Admin/Apages/RoomManage'
+import RoomAdd from './Admin/Apages/RoomAdd'
+import { ToastContainer , Bounce } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
+function App() {
+  return (
+    <BrowserRouter>
+    <ToastContainer 
+    position="top-right"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="light"
+    transition={Bounce} />
+      <div>
+
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/room' element={<Room />} />
+          <Route path='/booking' element={<Booking />} />
+          <Route path='team' element={<Team />} />
+          <Route path='/Testimonial' element={<Testimonial />} />
+          <Route path='/contect' element={<Contect />} />
+          <Route path='*' element={<Notfound />} />
+
+          {/* Admin path */}
+          <Route path='dashbord' element={<Dashbord />} />
+          <Route path='/roommanage' element={<RoomManage />} />
+          <Route path='/roomadd' element={<RoomAdd />}
+
+ />
+
+        </Routes>
+
+      </div>
+    </BrowserRouter>
+  )
+}
+
+export default App
