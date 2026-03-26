@@ -1,0 +1,47 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Aman",
+      "email": "Aman@example.com",
+      "password": "1234",
+      "gender": "male"
+    },
+    {
+      "id": "1774248468150",
+      "name": "aryan",
+      "email": "aryan@gmail.com",
+      "gender": "male",
+      "password": "1234"
+    },
+    {
+      "id": "1774248499584",
+      "name": "viku12",
+      "email": "viku@gmail.com",
+      "gender": "male",
+      "password": "2211"
+    },
+    {
+      "id": "1774253572588",
+      "name": "Rohan ",
+      "email": "Rohan@gmail.com",
+      "gender": "male",
+      "password": "0000"
+    }
+  ],
+  "Admin": [
+    {
+      "id": "1",
+      "name": "viku",
+      "email": "viku@example.com",
+      "password": "admin123"
+    },
+    {
+      "id": "2",
+      "name": "suman",
+      "email": "suman@example.com",
+      "password": "admin456"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

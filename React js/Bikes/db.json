@@ -1,0 +1,10 @@
+{
+  "bikes": [
+    {
+      "id": 1,
+      "name": "TVS Apache",
+      "color": "Blue",
+      "price": 95000
+    }
+  ]
+}
