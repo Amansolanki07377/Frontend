@@ -1,53 +1,60 @@
 import React, { useState, useEffect } from "react";
-import AddList from "./components/AddList"; // Make sure file name matches exactly
-import BikeList from "./components/BikeList"; 
-import { getBikes, addBike, updateBike, deleteBike } from "./api/api"; // Fixed path
+import AddList from "./components/AddList";
+import BikeList from "./components/BikeList";
+import { getBikes, addBike, updateBike, deleteBike } from "./api/api";
 
 function App() {
   const [bikes, setBikes] = useState([]);
   const [editingBike, setEditingBike] = useState(null);
+  const [error, setError] = useState(null);
 
-  // Fetch bikes when component mounts
+  // Fetch bikes
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getBikes();
-
-      setBikes(data);
+      try {
+        const data = await getBikes();
+        setBikes(data);
+        setError(null);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setError("Failed to load bikes. Please ensure the API server is running.");
+      }
     };
+
     fetchData();
   }, []);
 
-  // Add bike
+  // Add Bike
   const handleAdd = async (bike) => {
     const newBike = await addBike(bike);
     setBikes([...bikes, newBike]);
   };
 
-  // Update bike
+  // Update Bike
   const handleUpdate = async (bike) => {
-    const updated = await updateBike(bike.id, bike);
+    const updated = await updateBike(bike);
     setBikes(bikes.map((b) => (b.id === bike.id ? updated : b)));
     setEditingBike(null);
   };
 
-  // Delete bike
+  // Delete Bike
   const handleDelete = async (id) => {
     await deleteBike(id);
     setBikes(bikes.filter((b) => b.id !== id));
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial" }}>
-      <h1>🏍️ Bike CRUD Project</h1>
+    <div>
+      <h1>Bike CRUD App</h1>
 
-      {/* Add / Edit Form */}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
       <AddList
         onAdd={handleAdd}
-        onUpdate={handleUpdate}
         editingBike={editingBike}
+        onUpdate={handleUpdate}
       />
 
-      {/* Bike List Table */}
       <BikeList
         bikes={bikes}
         onEdit={setEditingBike}

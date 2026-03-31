@@ -6,6 +6,8 @@ const AddList = ({ onAdd, onUpdate, editingBike }) => {
   useEffect(() => {
     if (editingBike) {
       setBike(editingBike);
+    } else {
+      setBike({ name: "", color: "", price: "" });
     }
   }, [editingBike]);
 

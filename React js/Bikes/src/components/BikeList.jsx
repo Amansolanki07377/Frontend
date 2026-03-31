@@ -1,6 +1,10 @@
 import React from "react";
 
 const BikeList = ({ bikes, onEdit, onDelete }) => {
+  if (!bikes || !Array.isArray(bikes) || bikes.length === 0) {
+    return <p style={{ marginTop: "20px" }}>No bikes available. Please add one!</p>;
+  }
+
   return (
     <table border="1" cellPadding="10" cellSpacing="0">
       <thead>
