@@ -2,7 +2,7 @@ import React from 'react'
 // import Main_table from "./Main_table";
 // import Axios from './Axios';
 
- 
+ import Cards from './Cards';
  function App() {
    return (
      <div>
